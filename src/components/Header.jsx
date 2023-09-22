@@ -4,6 +4,15 @@ import cartIcon from "../assets/icons/cart.svg";
 import { Link } from "react-router-dom";
 
 function Header() {
+
+  // Function to scroll to the "About" section
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav id="header" className="bg-black text-white">
       <div className="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-2 container">
@@ -19,7 +28,7 @@ function Header() {
           <Link to="/" className="text-xl">
             Home
           </Link>
-          <Link to="#" className="text-xl">
+          <Link to="#about" className="text-xl" onClick={scrollToAbout}>
             About
           </Link>
         </div>
